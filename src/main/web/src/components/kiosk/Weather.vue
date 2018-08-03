@@ -40,11 +40,11 @@ export default {
     computed: {
         translatedPeriod() {
             if (this.weatherForecast.period === 'morning') {
-                return 'Matin';
+                return 'Morning';
             } else if (this.weatherForecast.period === 'afternoon') {
-                return 'Après-midi';
+                return 'Afternoon';
             } else {
-                return 'Soirée';
+                return 'Evening';
             }
         }
     },

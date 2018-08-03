@@ -40,7 +40,7 @@ public class PowerManagementService {
             LocalTime.parse(tvTimes.getSleepTime());
         } catch(NullPointerException | DateTimeParseException e) {
             logger.error(e.getMessage(), e);
-            throw new InvalidArgumentException("Les heures sont invalides");
+            throw new InvalidArgumentException("Hours are invalid");
         }
     }
 

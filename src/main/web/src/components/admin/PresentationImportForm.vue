@@ -1,20 +1,20 @@
 <template>
     <b-form @submit.prevent="importPresentation">
         <b-form-group id="streamNameGroup"
-                      label="Nom" label-for="streamNameInput">
+                      label="Name" label-for="streamNameInput">
             <b-form-input id="streamNameInput"
                           v-model="streamName"
                           type="text"
-                          placeholder="Entrer le nom du fil d'annonces">
+                          placeholder="Enter the name of the ad feed">
             </b-form-input>
         </b-form-group>
         <b-form-group id="presentationFileGroup"
-                      label="Fichier" label-for="presentationFileInput">
+                      label="File" label-for="presentationFileInput">
             <b-form-file id="presentationFileInput"
                          v-model="presentationFile"
                          plain
-                         choose-label="Choisissez une présentation"
-                         placeholder="Aucun fichier choisi">
+                         choose-label="Choose a presentation"
+                         placeholder="No file chosen">
             </b-form-file>
         </b-form-group>
 
@@ -22,9 +22,9 @@
             <b-button type="submit" class="import-btn"
                       :disabled="busy || !presentationFile || !streamName"
                       variant="primary">
-                Importer <i v-if="busy" class="fa fa-spinner fa-spin"></i>
+                Import <i v-if="busy" class="fa fa-spinner fa-spin"></i>
             </b-button>
-        </div>   
+        </div>
     </b-form>
 </template>
 

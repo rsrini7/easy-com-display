@@ -38,7 +38,7 @@ public class AggregatedNewsBuilderPeriodicTask extends EcdPeriodicTask {
             try {
                 fetchNewsFromFeed(newsFeedUrl, aggregatedNews);
             } catch(JDOMException |IOException e) {
-                logger.error("Echec de la récupération du flux " + newsFeedUrl, e);
+                logger.error("Failed to recover stream " + newsFeedUrl, e);
             }
         }
 

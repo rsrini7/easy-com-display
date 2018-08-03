@@ -5,13 +5,13 @@
                 <b-list-group-item>
                     <router-link to="/admin">
                         <span class="navigation-menu-entry-icon"><i class="fa fa-reply"></i></span>
-                        Retour
+                        Return
                     </router-link>
                 </b-list-group-item>
                 <b-list-group-item>
                     <router-link :to="{ name: 'stream-view', params: { id: streamId }}">
                         <span class="navigation-menu-entry-icon"><i class="fa fa-desktop"></i></span>
-                        Aperçu
+                        Overview
                     </router-link>
                 </b-list-group-item>
             </b-list-group>
@@ -39,17 +39,17 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <b-card header="Minuteur">
+                    <b-card header="Timer">
 
                         <form @submit.prevent="saveStreamTiming">
                             <div class="form-group">
-                                <label for="streamTiming">Secondes entre chaque diapo</label>
+                                <label for="streamTiming">Seconds between each slide</label>
                                 <input type="number" v-model="streamTiming" class="form-control" id="streamTiming">
                             </div>
                             <div class="centered-btn-wrapper">
                                 <b-button type="submit" class="save-btn"
                                         variant="primary">
-                                    Enregistrer
+                                    Record
                                 </b-button>
                             </div>
                         </form>
@@ -58,14 +58,14 @@
             </div>
         </div>
 
-        <!-- Modal pour insérer une image au fil d'annonces -->
+        <!-- Modal to insert an image over ads -->
         <b-modal id="streamFrameAddModal"
                  ref="streamFrameAddModal"
-                 title="Insérer une image">
+                 title="Insert an image">
             <stream-frame-add-form :streamId="streamId" :newFrameIndex="newFrameIndex"></stream-frame-add-form>
             <div slot="modal-footer">
                 <b-btn variant="secondary" @click="closeStreamFrameAddModal">
-                    Fermer
+                    Close
                 </b-btn>
             </div>
         </b-modal>

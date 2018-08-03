@@ -10,10 +10,10 @@
                             <i class="fa fa-photo"></i>&nbsp;&nbsp;Playlist
                         </b-list-group-item>
                         <b-list-group-item key="cms" to="/admin/cms">
-                            <i class="fa fa-database"></i>&nbsp;&nbsp;Gestion du contenu
+                            <i class="fa fa-database"></i>&nbsp;&nbsp;Content Mgmt
                         </b-list-group-item>
                         <b-list-group-item key="settings" to="/admin/settings">
-                            <i class="fa fa-gear"></i>&nbsp;&nbsp;Configuration de l'afficheur
+                            <i class="fa fa-gear"></i>&nbsp;&nbsp;Display Configuration
                         </b-list-group-item>
                     </b-list-group>
                 </b-card-body>

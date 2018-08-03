@@ -1,11 +1,11 @@
 <template>
     <b-form @submit.prevent="addStream">
         <b-form-group id="streamNameGroup"
-                      label="Nom" label-for="streamNameInput">
+                      label="Name" label-for="streamNameInput">
             <b-form-input id="streamNameInput"
                           v-model="streamName"
                           type="text"
-                          placeholder="Entrer le nom du fil d'annonces">
+                          placeholder="Enter the name of the ad feed">
             </b-form-input>
         </b-form-group>
 
@@ -13,9 +13,9 @@
             <b-button type="submit" class="import-btn"
                       :disabled="busy || !streamName"
                       variant="primary">
-                Ajouter <i v-if="busy" class="fa fa-spinner fa-spin"></i>
+                Add <i v-if="busy" class="fa fa-spinner fa-spin"></i>
             </b-button>
-        </div>   
+        </div>
     </b-form>
 </template>
 

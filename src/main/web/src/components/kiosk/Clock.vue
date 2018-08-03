@@ -17,8 +17,8 @@
 </template>
 
 <script>
-const DAYS = new Array("DIM", "LUN", "MAR", "MER", "JEU", "VEN", "SAM");
-const MONTHS = new Array("JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUL", "AOU", "SEP", "OCT", "NOV", "DEC");
+const DAYS = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+const MONTHS = new Array("JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC");
 
 export default {
     data() {

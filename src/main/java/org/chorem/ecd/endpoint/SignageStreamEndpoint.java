@@ -66,7 +66,7 @@ public class SignageStreamEndpoint extends Endpoint {
 
         Part filePart = getPartsMap(req).get("presentationFile");
         if (filePart != null) {
-            // Création par import d'un fichier
+            // Creation by importing a file
             InputStream inputStream = getInputStreamOrNull(filePart);
             String fileName = Optional.ofNullable(filePart).map(Part::getSubmittedFileName).orElse(null);
             String streamName = getFormDataStringOrNull(req, "streamName");

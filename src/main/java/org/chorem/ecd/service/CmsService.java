@@ -179,8 +179,11 @@ public class CmsService {
         validateStreamFrameAdditionParams(inputStream, newFrameIndex);
 
         Path streamPath = getStreamPath(streamId);
+        System.out.println(streamPath);
+        
         Path imagePath = streamPath.resolve(UUID.randomUUID().toString());
-
+        System.out.println(imagePath);
+        
         Files.copy(inputStream, imagePath);
 
         Path thumbnailPath = mediaConverterService.createThumbnail(imagePath);
@@ -248,44 +251,44 @@ public class CmsService {
 
     private void validateStreamCreationParams(String streamName) throws InvalidArgumentException {
         if (Strings.isNullOrEmpty(streamName)) {
-            throw new InvalidArgumentException("Le flux n'a pas de nom");
+            throw new InvalidArgumentException("The stream does not have a name");
         }
     }
 
     private void validateStreamImportParams(InputStream inputStream, String fileName, String streamName) throws InvalidArgumentException {
         if (inputStream == null) {
-            throw new InvalidArgumentException("Aucun fichier à importer");
+            throw new InvalidArgumentException("No files to import");
         }
         if (Strings.isNullOrEmpty(fileName)) {
-            throw new InvalidArgumentException("Le fichier n'a pas de nom");
+            throw new InvalidArgumentException("The file has no name");
         }
         validateStreamCreationParams(streamName);
     }
 
     private void validateStreamTimingParams(UUID streamId, Integer timing) throws InvalidArgumentException {
         if (streamId == null) {
-            throw new InvalidArgumentException("Aucun flux spécifié");
+            throw new InvalidArgumentException("No flow specified");
         }
         if (timing == null) {
-            throw new InvalidArgumentException("Aucun minutage spécifié");
+            throw new InvalidArgumentException("No timing specified");
         }
     }
 
     private void validateStreamFrameAdditionParams(InputStream inputStream, Integer index) throws InvalidArgumentException {
         if (inputStream == null) {
-            throw new InvalidArgumentException("Aucun fichier à insérer");
+            throw new InvalidArgumentException("No files to insert");
         }
         if (index == null) {
-            throw new InvalidArgumentException("Aucun index spécifié");
+            throw new InvalidArgumentException("No index specified");
         }
     }
 
     private void validateNewsFeed(NewsFeed newsFeed) {
         if (Strings.isNullOrEmpty(newsFeed.getName())) {
-            throw new InvalidArgumentException("Aucun nom spécifié");
+            throw new InvalidArgumentException("No name specified");
         }
         if (Strings.isNullOrEmpty(newsFeed.getUrl())) {
-            throw new InvalidArgumentException("Aucune URL spécifiée");
+            throw new InvalidArgumentException("No URL specified");
         }
     }
 

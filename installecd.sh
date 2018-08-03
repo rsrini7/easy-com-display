@@ -39,9 +39,9 @@ systemctl start unoconv.service
 apt-get install imagemagick
 
 cd /opt
-wget https://github.com/juga999/easy-com-display/releases/download/v1.0/ecd-app-v1.0.tgz
+wget https://github.com/rsrini7/Mine/raw/master/ecd-app.tar
 
-tar xvzf ecd-app-v1.0.tgz
+tar xvzf ecd-app.tar
 
 useradd -mU ecd
 chown ecd:ecd -R /opt/ecd-app

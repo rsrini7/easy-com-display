@@ -1,13 +1,13 @@
 <template>
 <div class="admin-stream-list">
-    <h3>Fils d'annonces</h3>
+    <h3>Ad feeds</h3>
 
     <b-link v-b-modal.streamAddModal>
-        <span><i class="fa fa-plus-square"></i>&nbsp;Créer un fil d'annonces</span>
+        <span><i class="fa fa-plus-square"></i>&nbsp;Create an ad feed</span>
     </b-link>
     &nbsp;&nbsp;
     <b-link v-b-modal.presentationImportModal>
-        <span><i class="fa fa-cloud-download"></i>&nbsp;Importer une présentation</span>
+        <span><i class="fa fa-cloud-download"></i>&nbsp;Import a presentation</span>
     </b-link>
 
     <div v-if="streamList">
@@ -39,7 +39,7 @@
                     </td>
                     <td class="admin-stream-last-update-col">
                         <div class="admin-stream-last-update">
-                            Mis à jour le {{getLastUpdateDate(stream)}}
+                            Updated {{getLastUpdateDate(stream)}}
                         </div>
                     </td>
                     <td class="admin-stream-delete-col">
@@ -49,33 +49,33 @@
             </tbody>
         </table>
     </div>
-    
+
     <empty-content v-if="!streamList || orderedStreams.length == 0"
-        message="Vous n'avez pas de fil d'annonces">
+        message="You do not have an ad feed">
     </empty-content>
 
-    <!-- Modal pour ajouter un flux d'annonces -->
+    <!-- Modal to add an ad feed -->
     <b-modal id="streamAddModal"
              ref="streamAddModal"
-             title="Créer un fil d'annonces" 
+             title="Create an ad feed"
              size="lg">
         <stream-add-form></stream-add-form>
         <div slot="modal-footer">
             <b-btn variant="secondary" @click="closeStreamAddModal">
-                Fermer
+                Close
             </b-btn>
         </div>
     </b-modal>
 
-    <!-- Modal pour importer un présentation -->
+    <!-- Modal to import a presentation -->
     <b-modal id="presentationImportModal"
              ref="presentationImportModal"
-             title="Importer une présentation" 
+             title="Import a presentation"
              size="lg">
         <presentation-import-form></presentation-import-form>
         <div slot="modal-footer">
             <b-btn variant="secondary" @click="closePresentationImportModal">
-                Fermer
+                Close
             </b-btn>
         </div>
     </b-modal>

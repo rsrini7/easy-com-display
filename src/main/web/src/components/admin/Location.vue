@@ -1,10 +1,10 @@
 <template>
     <div class="weather">
-        <h3>Météo</h3>
+        <h3>Weather</h3>
         <b-card>
             <form @submit.prevent="saveLocation">
                 <div class="form-group">
-                    <label for="forecastUrl">Lien vers la page <a target="_blank" href="https://www.prevision-meteo.ch">Previsionmeteo.ch</a> de la ville</label>
+                    <label for="forecastUrl">Link to the page <a target="_blank" href="https://www.prevision-meteo.ch">Previsionmeteo.ch</a> from the city</label>
                     <input type="text" v-model="location.weatherForecastUrl" class="form-control" id="forecastUrl">
                 </div>
 
@@ -16,7 +16,7 @@
                     <b-button type="submit" class="save-btn"
                               :disabled="!location.weatherForecastUrl"
                               variant="primary">
-                        Enregistrer
+                        Record
                     </b-button>
                 </div>
             </form>
@@ -48,10 +48,10 @@ export default {
             this.saveError = null;
             locationService.setLocation(this.location).then((result) => {
                 if (!result) {
-                    this.saveError = 'La sauvegarde a échoué';
+                    this.saveError = 'Backup failed';
                 }
             }, (result) => {
-                this.saveError = 'La sauvegarde a échoué';
+                this.saveError = 'Backup failed';
             });
         }
     }

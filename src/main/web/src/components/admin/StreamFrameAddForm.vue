@@ -1,12 +1,12 @@
 <template>
     <b-form @submit.prevent="insertImage">
         <b-form-group id="imageFileGroup"
-                      label="Fichier" label-for="imageFileInput">
+                      label="File" label-for="imageFileInput">
             <b-form-file id="imageFileInput"
                          v-model="imageFile"
                          plain
-                         choose-label="Choisissez une image"
-                         placeholder="Aucun fichier choisi"
+                         choose-label="Choose an image"
+                         placeholder="No file chosen"
                          accept=".jpg, .png, .gif, .tiff">
             </b-form-file>
         </b-form-group>
@@ -15,9 +15,9 @@
             <b-button type="submit" class="import-btn"
                       :disabled="busy || !imageFile"
                       variant="primary">
-                Ajouter <i v-if="busy" class="fa fa-spinner fa-spin"></i>
+                Add <i v-if="busy" class="fa fa-spinner fa-spin"></i>
             </b-button>
-        </div>   
+        </div>
     </b-form>
 </template>
 

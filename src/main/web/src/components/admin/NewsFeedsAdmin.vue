@@ -1,9 +1,9 @@
 <template>
 <div class="newsfeed-list">
-    <h3>Flux d'actualités</h3>
+    <h3>News feeds</h3>
 
     <b-link v-b-modal.newsFeedAddModal>
-        <span><i class="fa fa-plus-square"></i>&nbsp;Ajouter un flux d'actualités</span>
+        <span><i class="fa fa-plus-square"></i>&nbsp;Add a news feed</span>
     </b-link>
 
     <div v-if="newsFeedList">
@@ -36,18 +36,18 @@
     </div>
 
     <empty-content v-if="!newsFeed || newsFeedList.length == 0"
-        message="Vous n'avez pas de flux d'actualités">
+        message="You do not have a news feed">
     </empty-content
 
-    <!-- Modal pour ajouter un flux RSS -->
+    <!-- Modal to add an RSS feed -->
     <b-modal id="newsFeedAddModal"
              ref="newsFeedAddModal"
-             title="Ajouter un flux d'actualités"
+             title="Add a news feed"
              size="lg">
         <news-feed-add-form></news-feed-add-form>
         <div slot="modal-footer">
             <b-btn variant="secondary" @click="closeNewsFeedAddModal">
-                Fermer
+                Close
             </b-btn>
         </div>
     </b-modal>

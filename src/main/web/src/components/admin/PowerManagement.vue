@@ -1,13 +1,13 @@
 <template>
     <div class="admin-power-savings">
-        <b-card header="<i class='fa fa-tv'></i> Gestion de l'énergie">
+        <b-card header="<i class='fa fa-tv'></i> Energy management">
             <form @submit.prevent="saveTvHours">
                 <div class="form-group">
-                    <label for="wakeupTime">Heure d'allumage</label>
+                    <label for="wakeupTime">Ignition time</label>
                     <input type="time" v-model="tvTimes.wakeupTime" class="form-control" id="wakeupTime">
                 </div>
                 <div class="form-group">
-                    <label for="sleepTime">Heure de mise en veille</label>
+                    <label for="sleepTime">Standby time</label>
                     <input type="time" v-model="tvTimes.sleepTime" class="form-control" id="sleepTime">
                 </div>
 
@@ -19,7 +19,7 @@
                     <b-button type="submit" class="save-btn"
                               :disabled="!tvTimes.wakeupTime || !tvTimes.sleepTime"
                               variant="primary">
-                        Enregistrer
+                        Record
                     </b-button>
                 </div>
             </form>
@@ -52,10 +52,10 @@ export default {
             this.saveError = null;
             powerManagementService.setTvTimes(this.tvTimes).then((result) => {
                 if (!result) {
-                    this.saveError = 'La sauvegarde a échoué';
+                    this.saveError = 'Backup failed';
                 }
             }, (result) => {
-                this.saveError = 'La sauvegarde a échoué';
+                this.saveError = 'Backup failed';
             });
         }
     }
