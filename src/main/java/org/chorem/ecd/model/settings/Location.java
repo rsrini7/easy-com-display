@@ -42,4 +42,11 @@ public class Location {
         this.weatherForecastUrl = weatherForecastUrl;
     }
 
+	@Override
+	public String toString() {
+		return "Location [id=" + id + ", name=" + name + ", weatherForecastUrl=" + weatherForecastUrl + "]";
+	}
+
+    
+    
 }

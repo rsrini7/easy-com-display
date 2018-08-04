@@ -179,10 +179,12 @@ public class CmsService {
         validateStreamFrameAdditionParams(inputStream, newFrameIndex);
 
         Path streamPath = getStreamPath(streamId);
-        System.out.println(streamPath);
         
         Path imagePath = streamPath.resolve(UUID.randomUUID().toString());
-        System.out.println(imagePath);
+        
+        if(Files.notExists(streamPath)){
+        	Files.createDirectories(streamPath);
+        }
         
         Files.copy(inputStream, imagePath);
 

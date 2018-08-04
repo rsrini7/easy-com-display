@@ -1,16 +1,11 @@
 <template>
     <div class="weather">
-        <div v-if="weatherForecast && weatherForecast.period">
-            <div class="day-period">
-                {{translatedPeriod.toUpperCase()}}
-            </div>
-            <div class="temperature-wrapper">
-                <span class="temperature">{{weatherForecast.temperature}}</span>
-                <span class="felt-temperature">{{weatherForecast.feltTemperature}}</span>
+        <div v-if="weatherForecast">
+            <div class="temperature">
+                <span class="temperature"> Temp: {{weatherForecast.temperature}}c</span>
             </div>
             <div class="sky-and-rain">
-                <div class="sky">{{weatherForecast.sky}}</div>
-                <div class="rain">{{weatherForecast.rain}}</div>
+                <div class="sky">Humidity: {{weatherForecast.humidity}}</div>
             </div>
         </div>
     </div>
@@ -28,7 +23,7 @@ export default {
 
     mounted() {
         this.refresh();
-        this.refreshId = window.setInterval(() => this.refresh(), 2000);
+        this.refreshId = window.setInterval(() => this.refresh(), 500000);
     },
 
     beforeDestroy() {
@@ -52,6 +47,7 @@ export default {
     methods: {
         refresh() {
             cmsService.getWeatherForecast().then((forecast) => {
+                console.log(JSON.stringify(forecast));
                 this.weatherForecast = forecast;
             })
         }
@@ -71,7 +67,8 @@ export default {
 
 .temperature {
     color: #f1d104;
-    font-size: 2.5em;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .felt-temperature {
@@ -80,6 +77,7 @@ export default {
 .sky-and-rain {
     color: white;
     text-align: center;
+    font-size: 1.1em;
 }
 
 .rain {

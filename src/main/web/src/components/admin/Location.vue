@@ -4,8 +4,10 @@
         <b-card>
             <form @submit.prevent="saveLocation">
                 <div class="form-group">
-                    <label for="forecastUrl">Link to the page <a target="_blank" href="https://www.prevision-meteo.ch">Previsionmeteo.ch</a> from the city</label>
-                    <input type="text" v-model="location.weatherForecastUrl" class="form-control" id="forecastUrl">
+                    <label for="forecastUrl">Link to the page <a target="_blank" href="http://www.openweathermap.org">Openweathermap.org</a> from the city</label>
+                    <input type="text" text="http://api.openweathermap.org/data/2.5/weather?q=Bangalore,IN&APPID=95fa3a339bc9eeec51d0daf6d5ece591"
+                    	:disabled=true
+                    	v-model="location.weatherForecastUrl" class="form-control" id="forecastUrl">
                 </div>
 
                 <b-alert :show="saveError != null" variant="danger">

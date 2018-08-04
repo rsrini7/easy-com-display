@@ -202,7 +202,7 @@ export default {
             if (minutes < 10) {
                 minutes = '0' + minutes;
             }
-            return day + '/' + month + '/' + year + ' à ' + hours + ':' + minutes;
+            return day + '/' + month + '/' + year + ' at ' + hours + ':' + minutes;
         },
 
         onNewStream() {

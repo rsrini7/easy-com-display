@@ -67,7 +67,7 @@ class CmsService extends AbstractService {
 
     addStream(streamName) {
         let formData = new FormData();
-
+        
         formData.append('streamName', streamName);
 
         let url = CMS_API_ROOT + 'streams';

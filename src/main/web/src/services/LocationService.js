@@ -15,6 +15,7 @@ class LocationService extends AbstractService {
     }
 
     setLocation(location) {
+    	console.log(JSON.stringify(location));
         return this.postJson(SETTINGS_API_ROOT + 'location', location).then((response) => {
             return true;
         }, (response) => {

@@ -35,6 +35,7 @@ export default {
             this.busy = true;
             cmsService.addStream(this.streamName)
                 .then((result) => {
+                	console.print(result);
                     this.busy = false;
                 });
         }

@@ -86,6 +86,7 @@ export default {
     display: inline-block;
     text-align: center;
     line-height: 0.8;
+    margin-left:12%;
 }
 
 .clock-day {
@@ -95,6 +96,7 @@ export default {
 .clock-date {
     font-size: 2.8em;
     color: white;
+    
 }
 
 .clock-month {
@@ -103,7 +105,7 @@ export default {
 
 .clock-time {
     display: inline-block;
-    margin-left: 40%;
+    margin-left: 20%;
 }
 
 .clock-time-hours {

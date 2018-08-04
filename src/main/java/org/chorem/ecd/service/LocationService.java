@@ -1,20 +1,21 @@
 package org.chorem.ecd.service;
 
-import org.chorem.ecd.dao.SettingsDao;
-import org.chorem.ecd.dao.TransactionRequired;
-import org.chorem.ecd.model.settings.Location;
-import org.chorem.ecd.model.weather.WeatherForecast;
-import org.chorem.ecd.task.WeatherForecastBuilderPeriodicTask;
-import org.chorem.ecd.EcdConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.io.IOException;
+import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Optional;
+
+import org.chorem.ecd.EcdConfig;
+import org.chorem.ecd.dao.SettingsDao;
+import org.chorem.ecd.dao.TransactionRequired;
+import org.chorem.ecd.model.settings.Location;
+import org.chorem.ecd.model.weather.OpenWeatherForecast;
+import org.chorem.ecd.model.weather.WeatherForecast;
+import org.chorem.ecd.task.WeatherForecastBuilderPeriodicTask;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Julien Gaston (gaston@codelutin.com)
@@ -43,7 +44,7 @@ public class LocationService {
 
     public WeatherForecast getWeatherForecast() {
         try {
-            WeatherForecast weatherForecast = jsonService.loadFromJson(WeatherForecast.class, config.getWeatherForecastPath());
+        	WeatherForecast weatherForecast = jsonService.loadFromJson(WeatherForecast.class, config.getWeatherForecastPath());
             return Optional.ofNullable(weatherForecast).orElse(new WeatherForecast());
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
@@ -66,9 +67,12 @@ public class LocationService {
 
     private WeatherForecastBuilderPeriodicTask getWeatherForecastBuilderTask() {
         String forecastUrl = settingsDao.getLocation().getWeatherForecastUrl();
-        WeatherForecastBuilderPeriodicTask task = new WeatherForecastBuilderPeriodicTask(forecastUrl);
-        task.setConfig(config);
-        task.setJsonService(jsonService);
+        WeatherForecastBuilderPeriodicTask task =null;
+        if(forecastUrl !=null){
+        	task = new WeatherForecastBuilderPeriodicTask(forecastUrl);
+        	task.setConfig(config);
+        	task.setJsonService(jsonService);
+        }
         return task;
     }
 

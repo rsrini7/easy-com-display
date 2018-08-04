@@ -292,4 +292,18 @@
     </plugins>
   </build>
 
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.jboss.weld</groupId>
+  			<artifactId>weld-api</artifactId>
+  			<version>3.0.Final</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>javax.enterprise</groupId>
+  			<artifactId>cdi-api</artifactId>
+  			<version>2.0</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
