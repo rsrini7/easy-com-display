@@ -35,7 +35,7 @@
         </table>
     </div>
 
-    <empty-content v-if="!newsFeed || newsFeedList.length == 0"
+    <empty-content v-if="!newsFeedList || newsFeedList.length == 0"
         message="You do not have a news feed">
     </empty-content
 

@@ -11,7 +11,6 @@ import org.chorem.ecd.EcdConfig;
 import org.chorem.ecd.dao.SettingsDao;
 import org.chorem.ecd.dao.TransactionRequired;
 import org.chorem.ecd.model.settings.Location;
-import org.chorem.ecd.model.weather.OpenWeatherForecast;
 import org.chorem.ecd.model.weather.WeatherForecast;
 import org.chorem.ecd.task.WeatherForecastBuilderPeriodicTask;
 import org.slf4j.Logger;

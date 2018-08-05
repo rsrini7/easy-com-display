@@ -1,5 +1,7 @@
 package org.chorem.ecd.util;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by
  * --Vatsal Bajpai on
@@ -8,14 +10,14 @@ package org.chorem.ecd.util;
  */
 public class TempUnitConverter {
 
-    public static Double convertToCelsius(String kelvin) throws NumberFormatException {
+    public static String convertToCelsius(String kelvin) throws NumberFormatException {
         double inKelvin;
         try {
             inKelvin = Double.parseDouble(kelvin);
         } catch (NumberFormatException e) {
             throw e;
         }
-        return inKelvin - 273.15;
+        return new DecimalFormat("###.##").format(inKelvin - 273.15);
     }
 
     public static Double convertToFahrenheit(String kelvin) throws NumberFormatException {
